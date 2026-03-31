@@ -201,33 +201,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Global Presence Section */}
-      <section className="py-24 bg-surface-container-low px-8">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-primary font-display tracking-tighter mb-4 uppercase">Regional Hubs</h2>
-            <p className="text-on-surface-variant font-label uppercase tracking-widest text-sm">Strategic locations for global delivery</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { city: "London", region: "Europe", address: "Canary Wharf, E14" },
-              { city: "Dubai", region: "Middle East", address: "Business Bay, UAE" },
-              { city: "Singapore", region: "Asia Pacific", address: "Marina Bay Financial Centre" },
-              { city: "New York", region: "Americas", address: "Financial District, NY" }
-            ].map((hub, idx) => (
-              <motion.div 
-                key={idx}
-                whileHover={{ y: -5 }}
-                className="bg-surface-container-lowest p-8 rounded-sm shadow-md border-t-4 border-secondary"
-              >
-                <span className="font-label text-[10px] text-outline tracking-widest uppercase block mb-2">{hub.region}</span>
-                <h4 className="font-display font-bold text-xl text-primary mb-2 uppercase">{hub.city}</h4>
-                <p className="text-on-surface-variant text-sm">{hub.address}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
