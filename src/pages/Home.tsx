@@ -241,23 +241,31 @@ export default function Home() {
         <div className="container mx-auto px-8 lg:px-12">
           <div className="text-center mb-20">
             <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-100px" }}
               className="font-display text-4xl md:text-5xl font-black mb-4 leading-tight uppercase"
             >
               The Leadership Behind <br/><span className="text-secondary tracking-tighter">Architectural Precision</span>
             </motion.h2>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-100px" }}
+              className="w-24 h-1 bg-secondary mx-auto mt-6"
+            ></motion.div>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {partners.map((partner, idx) => (
               <motion.div 
                 key={idx}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.2 }}
-                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: idx * 0.2, ease: "easeOut" }}
+                viewport={{ once: true, margin: "-50px" }}
                 className="flex flex-col md:flex-row gap-8 items-start bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-secondary/50 transition-colors"
               >
                 <div className="w-full md:w-48 shrink-0">
@@ -284,13 +292,14 @@ export default function Home() {
               { id: '01', title: 'Precision', text: 'In every measurement, every calculation, and every delivery. We leave nothing to chance.' },
               { id: '02', title: 'Efficiency', text: 'Optimizing resources and time to deliver maximum value without compromising on quality standards.' },
               { id: '03', title: 'Consistency', text: 'A track record of excellence that remains unwavering across projects of any scale or complexity.' }
-            ].map((item) => (
+            ].map((item, idx) => (
               <motion.div 
                 key={item.id} 
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{ y: -8 }}
-                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.1, ease: "easeOut" }}
+                viewport={{ once: true, margin: "-50px" }}
                 className="flex gap-6 p-6 rounded-xl hover:bg-white/5 transition-all duration-300 group cursor-default border border-transparent hover:border-white/10"
               >
                 <div className="shrink-0 w-12 h-12 flex items-center justify-center border border-secondary text-secondary font-label font-bold group-hover:bg-secondary group-hover:text-white transition-all duration-300">
@@ -314,9 +323,10 @@ export default function Home() {
       <section className="py-24 bg-surface-container-low overflow-hidden">
         <div className="container mx-auto px-8 lg:px-12 mb-16 flex justify-between items-end">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-100px" }}
           >
             <h2 className="font-display text-4xl font-black text-primary mb-4 tracking-tight uppercase">Trust Symbols</h2>
             <p className="font-label text-secondary font-bold tracking-widest uppercase text-sm">Validating Our Commitment to Excellence</p>
@@ -342,10 +352,10 @@ export default function Home() {
             {trustSignals.map((signal, index) => (
               <motion.div 
                 key={index} 
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+                viewport={{ once: true, margin: "-50px" }}
                 className="min-w-[320px] md:min-w-[450px] bg-white p-12 border-b-8 border-primary shadow-2xl hover:shadow-secondary/10 transition-all duration-500 rounded-xl group/card"
               >
                 <div className="w-20 h-20 bg-primary/5 rounded-3xl flex items-center justify-center mb-10 group-hover/card:bg-secondary/10 transition-colors">
