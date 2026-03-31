@@ -5,7 +5,9 @@ import {
   MapPin,
   ShieldCheck,
   Share2,
-  Link as LinkIcon
+  Link as LinkIcon,
+  Mail,
+  Phone
 } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -75,7 +77,7 @@ export default function Layout({ children }: LayoutProps) {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="md:col-span-2 flex flex-col gap-6"
+              className="flex flex-col gap-6"
             >
               <span className="text-lg font-bold text-white font-display uppercase">H & P <span className="text-secondary">Projects</span></span>
               <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
@@ -116,6 +118,30 @@ export default function Layout({ children }: LayoutProps) {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
+              viewport={{ once: true }}
+              className="flex flex-col gap-4"
+            >
+              <span className="text-secondary font-label text-xs tracking-widest uppercase mb-2">Contact</span>
+              <div className="flex items-start gap-3 text-slate-500 text-[10px] font-label uppercase tracking-wider leading-relaxed">
+                <MapPin className="w-3.5 h-3.5 text-secondary shrink-0 mt-0.5" />
+                <span>B/28, Gholui, Balichak, Kharagpur, Paschim Medinipur, West Bengal - 721124</span>
+              </div>
+              <div className="flex items-center gap-3 text-slate-500 text-[10px] font-label uppercase tracking-wider">
+                <Phone className="w-3.5 h-3.5 text-secondary shrink-0" />
+                <span>8984030821, 9332627903</span>
+              </div>
+              <div className="flex items-start gap-3 text-slate-500 text-[10px] font-label uppercase tracking-wider">
+                <Mail className="w-3.5 h-3.5 text-secondary shrink-0 mt-0.5" />
+                <div className="flex flex-col gap-1">
+                  <span>koushikpaul@hnpprojects.com</span>
+                  <span>abhradeephazra@hnpprojects.com</span>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
               viewport={{ once: true }}
               className="flex flex-col gap-4"
             >

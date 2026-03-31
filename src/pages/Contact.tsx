@@ -33,12 +33,12 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <span className="font-label text-secondary font-bold tracking-[0.2em] uppercase mb-4 block">Get In Touch</span>
+            <span className="font-label text-secondary font-bold tracking-[0.2em] uppercase mb-4 block">Your Queries</span>
             <h1 className="text-5xl md:text-7xl font-black text-white leading-tight font-display tracking-tighter mb-4 uppercase">
               Contact Us
             </h1>
             <p className="text-xl text-surface-container-high max-w-xl leading-relaxed">
-              Have a project in mind? Our team of experts is ready to help you build the future of industrial infrastructure.
+              We'd love to hear from you! Please reach out at your convenience so we can discuss your project.
             </p>
           </motion.div>
         </div>
@@ -51,9 +51,9 @@ export default function Contact() {
             {/* Contact Information */}
             <div className="lg:col-span-5 space-y-12">
               <div>
-                <h2 className="text-4xl font-black text-primary font-display tracking-tighter mb-6 uppercase">Our Offices</h2>
+                <h2 className="text-4xl font-black text-primary font-display tracking-tighter mb-6 uppercase">H & P Projects</h2>
                 <p className="text-on-surface-variant text-lg leading-relaxed mb-8">
-                  We operate globally with strategic hubs positioned to serve diverse industrial sectors. Reach out to our headquarters or local representatives.
+                  A complete solutions partner for civil, mechanical, electrical, IT, and manpower solutions. Reach out to our headquarters for project discussions.
                 </p>
               </div>
 
@@ -63,10 +63,10 @@ export default function Contact() {
                     <MapPin className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-display font-bold text-lg mb-2 uppercase">Headquarters</h4>
+                    <h4 className="font-display font-bold text-lg mb-2 uppercase">Address</h4>
                     <p className="text-on-surface-variant text-sm leading-relaxed">
-                      12 Innovation Way, Tech District<br />
-                      HK 8820, Hong Kong
+                      B/28, Gholui, Balichak, Kharagpur,<br />
+                      Paschim Medinipur, West Bengal - 721124
                     </p>
                   </div>
                 </div>
@@ -76,10 +76,10 @@ export default function Contact() {
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-display font-bold text-lg mb-2 uppercase">Phone</h4>
+                    <h4 className="font-display font-bold text-lg mb-2 uppercase">Ph</h4>
                     <p className="text-on-surface-variant text-sm leading-relaxed">
-                      General Inquiries: +852 2345 6789<br />
-                      Project Support: +852 2345 6790
+                      8984030821<br />
+                      9332627903
                     </p>
                   </div>
                 </div>
@@ -91,8 +91,8 @@ export default function Contact() {
                   <div>
                     <h4 className="font-display font-bold text-lg mb-2 uppercase">Email</h4>
                     <p className="text-on-surface-variant text-sm leading-relaxed">
-                      info@hpprojects.com<br />
-                      careers@hpprojects.com
+                      koushikpaul@hnpprojects.com<br />
+                      abhradeephazra@hnpprojects.com
                     </p>
                   </div>
                 </div>
@@ -160,7 +160,7 @@ export default function Contact() {
                   </div>
                   <div className="md:col-span-2">
                     <button className="w-full bg-secondary text-white font-label font-bold uppercase tracking-[0.2em] py-4 rounded-sm hover:brightness-110 transition-all shadow-lg shadow-secondary/20 flex items-center justify-center gap-3 group">
-                      Send Message
+                      SEND YOUR QUERY
                       <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     </button>
                   </div>
@@ -172,21 +172,31 @@ export default function Contact() {
       </section>
 
       {/* Map Section */}
-      <section className="h-[500px] w-full relative grayscale hover:grayscale-0 transition-all duration-1000">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.6798348635306!2d114.1641543!3d22.290141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340400ed43679813%3A0x8670846939943632!2sTsim%20Sha%20Tsui!5e0!3m2!1sen!2shk!4v1711923456789!5m2!1sen!2shk" 
-          width="100%" 
-          height="100%" 
-          style={{ border: 0 }} 
-          allowFullScreen 
-          loading="lazy" 
-          referrerPolicy="no-referrer-when-downgrade"
-          title="H&P Projects Office Location"
-        ></iframe>
-        <div className="absolute top-8 left-8 bg-primary p-6 text-white shadow-2xl hidden md:block max-w-xs">
+      <section className="h-[500px] w-full relative group overflow-hidden">
+        <div className="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors duration-700 z-10 pointer-events-none"></div>
+        <img 
+          src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=2066&auto=format&fit=crop" 
+          alt="Location Map Placeholder" 
+          className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute inset-0 flex items-center justify-center z-20">
+          <motion.a 
+            href="https://maps.app.goo.gl/PgcMR8PgRUAvxhXW8"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-primary text-white px-10 py-5 font-label font-bold uppercase tracking-widest rounded-sm shadow-2xl flex items-center gap-4 hover:bg-secondary transition-all"
+          >
+            <MapPin className="w-6 h-6" />
+            View on Google Maps
+          </motion.a>
+        </div>
+        <div className="absolute top-8 left-8 bg-primary p-6 text-white shadow-2xl hidden md:block max-w-xs z-20">
           <h4 className="font-display font-bold text-lg mb-2 uppercase">Visit Us</h4>
           <p className="text-xs text-surface-container-high leading-relaxed">
-            Our doors are always open for visionary partners and future-builders. Schedule a visit to our innovation lab.
+            B/28, Gholui, Balichak, Kharagpur, Paschim Medinipur, West Bengal - 721124
           </p>
         </div>
       </section>
