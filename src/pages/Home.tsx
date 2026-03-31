@@ -70,7 +70,12 @@ export default function Home() {
     <div className="flex flex-col overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+        <motion.div 
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 10, ease: "easeOut" }}
+          className="absolute inset-0 z-0"
+        >
           <img 
             className="w-full h-full object-cover" 
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqsmkH5hS2Ko1yc2ez5oZAMfs5QImoFRp7lBkf2nFbxIx3vaqEqZrTq7Ia_vEIFyHx0kTnYGylp5l9DJviwvvmTXRU8i52XvXuWSFHIN2p2AaUGRIAh8K-do1SJzrRgsrt5cGZOduBBOKVawh73SrPe0shGcHcMkAkTUn_8dXXHU8UMpmfSY9err_jS_h0sMtKBrBAV31U0tme7SboNC3_GBQH9w-ZjctSlg7dHCoILAWwhGJYGayNDCwsh4uCof_j9wCJZda6tRwN"
@@ -78,7 +83,7 @@ export default function Home() {
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/60 to-transparent"></div>
-        </div>
+        </motion.div>
         <div className="relative z-10 container mx-auto px-8 lg:px-12">
           <div className="max-w-4xl">
             <motion.p 
@@ -88,18 +93,31 @@ export default function Home() {
             >
               Precision in Engineering
             </motion.p>
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="font-display text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight mb-8 tracking-tighter"
-            >
-              Innovate.<br/>Inspire.<br/>Impact.<br/><span className="text-secondary">Repeat.</span>
-            </motion.h1>
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight mb-8 tracking-tighter">
+              {["Innovate.", "Inspire.", "Impact."].map((word, idx) => (
+                <motion.span
+                  key={idx}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.2 + idx * 0.15 }}
+                  className="block"
+                >
+                  {word}
+                </motion.span>
+              ))}
+              <motion.span
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.8, type: "spring" }}
+                className="text-secondary"
+              >
+                Repeat.
+              </motion.span>
+            </h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 1 }}
               className="font-sans text-xl text-surface-container-high max-w-2xl mb-12 leading-relaxed"
             >
               A complete solutions partner for civil, mechanical, electrical, IT, and manpower solutions. Building the future of industrial excellence.
@@ -107,18 +125,24 @@ export default function Home() {
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
+              transition={{ delay: 1.2 }}
               className="flex flex-wrap gap-4"
             >
-              <Link 
-                to="/business"
-                className="bg-primary text-white border border-primary px-10 py-5 font-label font-bold uppercase tracking-widest rounded-lg hover:bg-secondary hover:border-secondary transition-all duration-300"
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link 
+                  to="/business"
+                  className="bg-primary text-white border border-primary px-10 py-5 font-label font-bold uppercase tracking-widest rounded-lg hover:bg-secondary hover:border-secondary transition-all duration-300 block"
+                >
+                  Our Business
+                </Link>
+              </motion.div>
+              <motion.button 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-5 font-label font-bold uppercase tracking-widest rounded-lg hover:bg-white hover:text-primary transition-all duration-300"
               >
-                Our Business
-              </Link>
-              <button className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-5 font-label font-bold uppercase tracking-widest rounded-lg hover:bg-white hover:text-primary transition-all duration-300">
                 Get a Quote
-              </button>
+              </motion.button>
             </motion.div>
           </div>
         </div>
